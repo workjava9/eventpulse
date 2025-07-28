@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://postgres:5432/analytics
+    url: jdbc:postgresql://postgres:6543/analytics
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver

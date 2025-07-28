@@ -3,10 +3,11 @@ package com.example.app;
 import com.example.app.security.JwtTokenProvider;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.util.ReflectionTestUtils;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ActiveProfiles("test")
 class JwtTokenProviderTest {
 
     private JwtTokenProvider jwtTokenProvider;

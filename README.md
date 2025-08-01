@@ -71,8 +71,5 @@ POST `/events`:
 
 ---
 
-##  Переименование проекта
 
-**Было:** `eal_time_event_analytics_platform_tests_updated`  
-**Стало:** `EventStream` — короче, понятно, отражает суть: поток событий в реальном времени.
 

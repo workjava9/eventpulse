@@ -1,53 +1,46 @@
+# eventpulse
 
-# Real-time Event Analytics Platform
+Enterprise-уровня pet-проект для сбора, хранения и аналитики пользовательских событий в реальном времени.
 
-Java pet-проект уровня enterprise с Kafka, Redis, Spring Boot и JWT.
+## ️ Технологии
 
-## Стек
+- Java 17 + Spring Boot 3
+- Kafka, Redis, PostgreSQL
+- Spring Security + JWT
+- JPA + Liquibase
+- Prometheus + Grafana (мониторинг)
+- Docker Compose (локальное окружение)
+- JUnit 5, Testcontainers, Mockito
 
-- Java 17, Spring Boot 3
-- Spring Web, Security, Kafka, Redis, JPA
-- PostgreSQL + Liquibase
-- JWT авторизация
-- Docker Compose (Kafka, Redis, Postgres, Prometheus, Grafana)
-- JUnit 5, Mockito, Testcontainers
+##  Быстрый старт
 
-## Запуск
-
-1. Соберите проект:
+1. Соберите JAR:
 ```bash
 ./gradlew clean build
 ```
 
-2. Запустите окружение:
+2. Запустите всё через Docker:
 ```bash
-cd Docker
-docker compose up -d
+docker compose down -v
+docker compose up --build
 ```
 
-3. Запустите приложение:
-```bash
-./gradlew bootRun
-```
 
-## Тестирование
+##  Авторизация
 
-```bash
-./gradlew test
-```
-
-## Авторизация
-
-1. POST `/auth/login`:
+- POST `/auth/login`:
 ```json
 {
   "username": "test",
   "password": "test"
 }
 ```
-2. Получите `accessToken` и используйте в `Authorization: Bearer <token>` заголовке.
+- Используйте токен в заголовке:
+```
+Authorization: Bearer <accessToken>
+```
 
-## Отправка события
+##  Отправка события
 
 POST `/events`:
 ```json
@@ -59,13 +52,27 @@ POST `/events`:
 }
 ```
 
-## Топики Kafka
+##  Мониторинг
+
+- Prometheus: [localhost:9090](http://localhost:9090)
+- Grafana: [localhost:3000](http://localhost:3000)
+- Kafka UI: [localhost:8085](http://localhost:8085)
+
+##  Тесты
+
+```bash
+./gradlew test
+```
+
+##  Kafka топики
+
 - `user-events` — события пользователей
-- `user-events.dlq` — DLQ
+- `user-events.dlq` — отложенные сообщения (dead-letter)
 
-## Мониторинг
+---
 
-- Prometheus: http://localhost:9090
-- Grafana: http://localhost:3000
-- Kafka UI: http://localhost:8085
+##  Переименование проекта
+
+**Было:** `eal_time_event_analytics_platform_tests_updated`  
+**Стало:** `EventStream` — короче, понятно, отражает суть: поток событий в реальном времени.
 

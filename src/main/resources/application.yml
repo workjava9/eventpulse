@@ -22,7 +22,7 @@ spring:
       port: 6379
   docker:
     compose:
-      enabled: false  # чтобы не запускалось автоматически
+      enabled: false 
 
 jwt:
   secret: myverysecretjwtkey00000000000000000000000000000000

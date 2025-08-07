@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/real_time_event_analytics_platform.main.iml" filepath="$PROJECT_DIR$/.idea/modules/real_time_event_analytics_platform.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/real_time_event_analytics_platform.test.iml" filepath="$PROJECT_DIR$/.idea/modules/real_time_event_analytics_platform.test.iml" />
     </modules>
   </component>
 </project>

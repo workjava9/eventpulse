@@ -1,9 +1,9 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:6543/postgres
-    username: postgres
-    password: postgres
-    driver-class-name: org.postgresql.Driver
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+    url: jdbc:tc:postgresql:15:///testdb
+    username: test
+    password: test
 
   jpa:
     hibernate:
@@ -17,15 +17,17 @@ spring:
       port: 6379
 
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: ${spring.embedded.kafka.brokers} # будет переопределено из Testcontainers
     consumer:
-      group-id: test-group
+      group-id: analytics-consumer
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
   main:
     allow-bean-definition-overriding: true

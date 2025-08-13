@@ -7,7 +7,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: Docker/Dockerfile
+      dockerfile: Dockerfile
     container_name: analytics-app
     ports:
       - "8080:8080"

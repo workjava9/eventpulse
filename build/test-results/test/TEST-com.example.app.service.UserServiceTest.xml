@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.app.service.UserServiceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-08-07T11:33:39.132Z" hostname="MacBook-Pro-Shad0wX7.local" time="0.45">
-  <properties/>
-  <testcase name="testFindUserById_WhenUserExists()" classname="com.example.app.service.UserServiceTest" time="0.448"/>
-  <testcase name="testFindUserById_WhenUserNotFound()" classname="com.example.app.service.UserServiceTest" time="0.002"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
